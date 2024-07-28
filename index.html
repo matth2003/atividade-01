@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>atv 01</title>
     <style>
-        .full-width {
-            width: 100vw;
-            background-color: lightblue;
-        }
-        
-        .full-height {
-            height: 100vh;
-            background-color: lightcoral;
-        }
         .botao {
             display: grid;
             place-items: 100vw;
             height: 50vh;  
         }
     </style>
+    <script>
+        function fazerPergunta() {
+            
+            var resposta = prompt("Qual é o seu nome?");
+            
+            
+            if (resposta !== null) {
+                
+                alert("Olá, " + resposta + "!");
+            } else {
+                alert("Você não forneceu um nome.");
+            }
+        }
+    </script>
 </head>
 <body>
     <div class="botao">
@@ -29,5 +34,10 @@
     <div class="textos">
         <h1>ainda não sei</h1>
     </div>
+    <div class="textos2">
+        <h1>ainda não sei</h1>
+        <p>continuo sem saber </p>
+    </div>
+
 </body>
 </html>
