@@ -48,6 +48,24 @@
             font-size: 16px;
             cursor: pointer;
         }
+        .button-container {
+            margin: 20px;
+            text-align: center;
+        }
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            background-color: #007bff;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
     </style>
     <script>
         function fazerPergunta() {
@@ -65,6 +83,10 @@
     </script>
 </head>
 <body>
+    <div class="button-container">
+        <button class="btn" id="button1">Botão 1</button>
+        <button class="btn" id="button2">Botão 2</button>
+    </div>
     <div class="botao">
         <h1>vamo descobrir</h1>
     </div>
@@ -76,6 +98,21 @@
         <h1>ainda não sei</h1>
         <p>continuo sem saber </p>
     </div>
+    <script>
+        // Obtém referências aos botões
+        var button1 = document.getElementById("button1");
+        var button2 = document.getElementById("button2");
+
+        // Adiciona um evento de clique ao Botão 1
+        button1.onclick = function() {
+            alert("Você clicou no Botão 1!");
+        }
+
+        // Adiciona um evento de clique ao Botão 2
+        button2.onclick = function() {
+            alert("Você clicou no Botão 2!");
+        }
+    </script>
 
 </body>
 </html>
