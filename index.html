@@ -5,6 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>atv 01</title>
     <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        /* Estilo da aba lateral */
+        .sidebar {
+            height: 100%; /* Ocupa a altura total */
+            width: 250px; /* Largura da aba lateral */
+            position: fixed; /* Fica fixo na tela */
+            top: 0;
+            left: -250px; /* Começa fora da tela */
+            background-color: #111;
+            overflow-x: hidden; /* Remove a rolagem horizontal */
+            transition: 0.3s; /* Transição suave para abrir e fechar */
+            padding-top: 60px;
+        }
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #f1f1f1;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidebar a:hover {
+            color: #818181;
+        }
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        /* Estilo do botão para abrir a aba lateral */
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 15px;
+            border-radius: 5px;
+        }
+        .openbtn:hover {
+            background-color: #575757;
+        }
+        /* Estilo do conteúdo principal */
+        .content {
+            transition: margin-left .3s; /* Transição suave para mover o conteúdo */
+            padding: 16px;
+        }
         .botao {
             display: grid;
             place-items: 100vw;
@@ -83,6 +137,22 @@
     </script>
 </head>
 <body>
+    <button class="openbtn" onclick="openNav()">☰ Abrir Aba Lateral</button>
+
+    <!-- A aba lateral -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+        <a href="#">Link 3</a>
+        <a href="#">Link 4</a>
+    </div>
+
+    <!-- O conteúdo principal -->
+    <div id="main" class="content">
+        <h2>Conteúdo Principal</h2>
+        <p>Conteúdo da página vai aqui.</p>
+    </div>
     <div class="button-container">
         <button class="btn" id="button1">Botão 1</button>
         <button class="btn" id="button2">Botão 2</button>
@@ -99,6 +169,16 @@
         <p>continuo sem saber </p>
     </div>
     <script>
+          function openNav() {
+            document.getElementById("mySidebar").style.left = "0";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        // Fecha a aba lateral
+        function closeNav() {
+            document.getElementById("mySidebar").style.left = "-250px";
+            document.getElementById("main").style.marginLeft= "0";
+        }
         // Obtém referências aos botões
         var button1 = document.getElementById("button1");
         var button2 = document.getElementById("button2");
